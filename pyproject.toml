@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "redactkit"
-version = "0.1.0"
+version = "0.1.1"
 description = "Production-hardened Python redaction for structured logs, LLM agent payloads, and AWS-signed URLs."
 readme = "README.md"
 license = { text = "MIT" }

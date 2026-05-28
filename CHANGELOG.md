@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-05-28
+
+### Changed
+
+- Docs only — no functional or API changes.
+- README: retargeted Convilyn link from `convilyn.com` (dead) to
+  `convilyn.corenovus.com` (the actual platform URL).
+- README: polished badges (`flat-square` style + logos), added a pre-1.0
+  `Status: Beta` callout, collapsed FAQ into `<details>` blocks, condensed
+  the "Why" section, retargeted the Python badge to python.org.
+- README: dropped redundant footer copyright (still present in `LICENSE`).
+- Wired `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, and `SECURITY.md` into
+  the README's bottom sections.
+
+### Why a docs-only release?
+
+PyPI freezes the rendered description at upload time, so the v0.1.0
+PyPI page kept the day-1 README. This release syncs the PyPI page with
+the polished README on GitHub. No code on disk changes between 0.1.0
+and 0.1.1 — pin either one safely.
+
 ## [0.1.0] - 2026-05-28
 
 ### Added
@@ -39,5 +60,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Zero runtime dependencies. Python 3.10, 3.11, 3.12, 3.13 supported.
 - Pre-1.0 release: API may evolve based on early user feedback before v1.0.0.
 
-[Unreleased]: https://github.com/CoreNovus/redactkit/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/CoreNovus/redactkit/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/CoreNovus/redactkit/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/CoreNovus/redactkit/releases/tag/v0.1.0

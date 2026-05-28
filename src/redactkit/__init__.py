@@ -22,7 +22,7 @@ from .core import (
 )
 from .url_query import redact_url_query
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = [
     "DEFAULT_KEY_TERMS",

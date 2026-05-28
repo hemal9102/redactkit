@@ -11,7 +11,7 @@ AWS-signed URLs.** Zero dependencies — pure stdlib. Built for `dict[str, Any]`
 for free-form prose.
 
 > **Status: Beta (0.1.x)** · Pre-1.0 — the API may evolve based on
-> early-user feedback before v1.0. Pin to `redactkit~=0.1.0` if you want
+> early-user feedback before v1.0. Pin to `redactkit~=0.1.1` if you want
 > patch-level updates only.
 
 ```python
@@ -42,7 +42,7 @@ Requires Python ≥ 3.10. No runtime dependencies.
    credentials, cookies, sessions covered out of the box. Add your own via
    `extend_key_pattern` — no module-state mutation, no monkey-patching.
 5. **Zero deps, production provenance.** Pure stdlib (Python ≥ 3.10). Extracted
-   from the [Convilyn](https://convilyn.com) agent platform — used in LLM agent
+   from the [Convilyn](https://convilyn.corenovus.com) agent platform — used in LLM agent
    middleware, supervisor handoffs, event emission, and HTTP response redaction.
 
 ## When to pick redactkit vs. alternatives
@@ -204,7 +204,7 @@ See [SECURITY.md](SECURITY.md) for the private-advisory process and our
 
 ## Production users
 
-Used in production by [Convilyn](https://convilyn.com). Open a PR adding your
+Used in production by [Convilyn](https://convilyn.corenovus.com). Open a PR adding your
 project here once you've shipped redactkit to prod.
 
 ## License
