@@ -1,0 +1,26 @@
+name: Feature request
+description: A new redaction helper or denylist term
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use case
+      description: What sensitive data are you trying to redact, and where does it come from (logs, request bodies, span attrs, …)?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed API
+      description: A code sketch of how you'd call this. Keep it small.
+      render: python
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Did `extend_key_pattern` / a custom `OutboundErrorRedactor` already work? Why doesn't it fit?
+    validations:
+      required: true

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/CoreNovus/redactkit/security/advisories/new
+    about: Report privately via GitHub Security Advisories. Do not open a public issue.
+  - name: Question / discussion
+    url: https://github.com/CoreNovus/redactkit/discussions
+    about: For "how do I…" and design discussion. Bugs/features go through the templates above.

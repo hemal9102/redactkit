@@ -1,0 +1,39 @@
+name: Bug report
+description: A redaction case redactkit gets wrong
+labels: ["bug"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: redactkit version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: python
+    attributes:
+      label: Python version
+      placeholder: "3.12.7"
+    validations:
+      required: true
+  - type: textarea
+    id: reproducer
+    attributes:
+      label: Minimal reproducer
+      description: A short snippet we can paste into a REPL.
+      render: python
+      placeholder: |
+        from redactkit import redact_args
+        out = redact_args({"...": "..."})
+        print(out)
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs actual
+      placeholder: |
+        Expected: {"...": "***"}
+        Actual:   {"...": "leaked"}
+    validations:
+      required: true
