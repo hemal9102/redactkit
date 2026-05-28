@@ -1,13 +1,18 @@
 # redactkit
 
-[![PyPI version](https://img.shields.io/pypi/v/redactkit.svg)](https://pypi.org/project/redactkit/)
-[![Python versions](https://img.shields.io/pypi/pyversions/redactkit.svg)](https://pypi.org/project/redactkit/)
-[![CI](https://github.com/CoreNovus/redactkit/actions/workflows/ci.yml/badge.svg)](https://github.com/CoreNovus/redactkit/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/redactkit.svg?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/redactkit/)
+[![Python](https://img.shields.io/pypi/pyversions/redactkit.svg?style=flat-square&logo=python&logoColor=white)](https://pypi.org/project/redactkit/)
+[![CI](https://img.shields.io/github/actions/workflow/status/CoreNovus/redactkit/ci.yml?branch=main&style=flat-square&logo=github)](https://github.com/CoreNovus/redactkit/actions/workflows/ci.yml)
+[![Downloads](https://img.shields.io/pypi/dm/redactkit.svg?style=flat-square)](https://pypi.org/project/redactkit/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 
 **Production-hardened Python redaction for structured logs, LLM agent payloads, and
 AWS-signed URLs.** Zero dependencies — pure stdlib. Built for `dict[str, Any]`, not
 for free-form prose.
+
+> **Status: Beta (0.1.x)** · Pre-1.0 — the API may evolve based on
+> early-user feedback before v1.0. Pin to `redactkit~=0.1.0` if you want
+> patch-level updates only.
 
 ```python
 from redactkit import redact_args
@@ -33,11 +38,11 @@ Requires Python ≥ 3.10. No runtime dependencies.
    libraries ignore.
 3. **Overflow splitting.** `summarize_payload` returns a short wire-safe summary
    plus an optional full body, so a 5 MB tool result doesn't blow your log budget.
-4. **Comprehensive default denylist.** Passwords, tokens, JWT, OAuth, bearer,
-   credentials, cookies, sessions — covered. Extensible without mutating module state.
-5. **Zero dependencies.** Drop into any Python ≥ 3.10 project, no transitive bloat.
-6. **Production-hardened.** Extracted from the
-   [Convilyn](https://convilyn.com) agent platform; battle-tested in LLM agent
+4. **Comprehensive + extensible denylist.** Passwords, tokens, JWT, OAuth, bearer,
+   credentials, cookies, sessions covered out of the box. Add your own via
+   `extend_key_pattern` — no module-state mutation, no monkey-patching.
+5. **Zero deps, production provenance.** Pure stdlib (Python ≥ 3.10). Extracted
+   from the [Convilyn](https://convilyn.com) agent platform — used in LLM agent
    middleware, supervisor handoffs, event emission, and HTTP response redaction.
 
 ## When to pick redactkit vs. alternatives
@@ -143,29 +148,47 @@ mutated (Open/Closed principle).
 
 ## FAQ
 
-**Does it handle free-form text PII (names, addresses)?**
+<details>
+<summary><b>Does it handle free-form text PII (names, addresses)?</b></summary>
+
 No. Use [Presidio](https://github.com/microsoft/presidio) or
-[scrubadub](https://github.com/LeapBeyond/scrubadub) for that. redactkit's strength
-is structured data and known-schema secrets.
+[scrubadub](https://github.com/LeapBeyond/scrubadub) for that. redactkit's
+strength is structured data and known-schema secrets.
+</details>
 
-**Does it handle nested dicts and lists?**
+<details>
+<summary><b>Does it handle nested dicts and lists?</b></summary>
+
 Yes. `redact_args` walks recursively. Tuples preserve their type.
+</details>
 
-**Can I add my own sensitive key names?**
+<details>
+<summary><b>Can I add my own sensitive key names?</b></summary>
+
 Yes — use `extend_key_pattern([r"my_term"])` and pass the result via the
 `key_pattern=` argument. No module-level state is mutated.
+</details>
 
-**Is it thread-safe?**
+<details>
+<summary><b>Is it thread-safe?</b></summary>
+
 Yes. All redaction functions are pure (no global mutation, no I/O) and the
 module-level regexes are immutable compiled patterns.
+</details>
 
-**Is `redact_args` non-mutating?**
+<details>
+<summary><b>Is <code>redact_args</code> non-mutating?</b></summary>
+
 Yes. It always returns a new object — the input dict / list / tuple is never
 modified in place.
+</details>
 
-**Will redaction slow down my hot path?**
-The dominant cost is the regex `.search` per dict key. For typical agent payloads
-(< 100 keys, < 10 KB serialized) the overhead is sub-millisecond.
+<details>
+<summary><b>Will redaction slow down my hot path?</b></summary>
+
+The dominant cost is the regex `.search` per dict key. For typical agent
+payloads (< 100 keys, < 10 KB serialized) the overhead is sub-millisecond.
+</details>
 
 ## Contributing
 
