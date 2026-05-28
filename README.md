@@ -3,7 +3,7 @@
 [![PyPI](https://img.shields.io/pypi/v/redactkit.svg?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/redactkit/)
 [![Python](https://img.shields.io/pypi/pyversions/redactkit.svg?style=flat-square&logo=python&logoColor=white)](https://pypi.org/project/redactkit/)
 [![CI](https://img.shields.io/github/actions/workflow/status/CoreNovus/redactkit/ci.yml?branch=main&style=flat-square&logo=github)](https://github.com/CoreNovus/redactkit/actions/workflows/ci.yml)
-[![Downloads](https://img.shields.io/pypi/dm/redactkit.svg?style=flat-square)](https://pypi.org/project/redactkit/)
+[![Type Checked](https://img.shields.io/badge/type--checked-pyright-blue.svg?style=flat-square)](https://github.com/microsoft/pyright)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 
 **Production-hardened Python redaction for structured logs, LLM agent payloads, and
