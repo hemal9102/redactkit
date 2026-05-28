@@ -20,6 +20,7 @@ from .core import (
     redact_text,
     summarize_payload,
 )
+from .url_query import redact_url_query
 
 __version__ = "0.1.0"
 
@@ -36,5 +37,6 @@ __all__ = [
     "output_digest",
     "redact_args",
     "redact_text",
+    "redact_url_query",
     "summarize_payload",
 ]
