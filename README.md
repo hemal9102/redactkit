@@ -169,8 +169,15 @@ The dominant cost is the regex `.search` per dict key. For typical agent payload
 
 ## Contributing
 
-Issues and PRs welcome. Please add tests for any behavior change and keep the
-zero-runtime-dependency invariant.
+Issues and PRs welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the dev
+setup, what we do and don't accept, and the PR checklist. Conduct expectations
+are in [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+
+## Security
+
+Found a redaction bypass or ReDoS pattern? Please don't open a public issue.
+See [SECURITY.md](SECURITY.md) for the private-advisory process and our
+90-day coordinated disclosure window.
 
 ## Production users
 
